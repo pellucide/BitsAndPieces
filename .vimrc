@@ -12,6 +12,12 @@ filetype indent on
 set autoread
 
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => VIM diff 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set diffopt=iwhite
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -35,7 +41,7 @@ set hid
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
-set whichwrap+=<,>,h,l
+"set whichwrap+=<,>,h,l
 
 " Ignore case when searching
 set ignorecase
@@ -130,7 +136,7 @@ set viminfo^=%
 set laststatus=2
 
 " Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ Line:\ %l
+set statusline=\ %{HasPaste()}%f%m%r%h\ %w\ \ Line:\ %l
 
 
 

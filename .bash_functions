@@ -11,7 +11,7 @@ gittag ()
   local secsSince1970=`date "+%s"`
   local daysSince1970=`expr $secsSince1970 / 3600`
 
-  local command="git tag -a "\"day-$daysSince1970\"" -m "\"$today\"""
+  local command="git tag -a  -m "\"$today\"" "\"day-$daysSince1970\"" "
   echo $today
   echo $secsSince1970
   echo $daysSince1970

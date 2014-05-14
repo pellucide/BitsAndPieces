@@ -11,8 +11,12 @@ gittag ()
   local secsSince1970=`date "+%s"`
   local daysSince1970=`expr $secsSince1970 / 3600`
 
-  command=`git tag -a "day-$daysSince1970" -m "$today"`
+  local command="git tag -a "\"day-$daysSince1970\"" -m "\"$today\"""
+  echo $today
+  echo $secsSince1970
+  echo $daysSince1970
   echo $command
+  $command
 }
 
 # b) function cd_func

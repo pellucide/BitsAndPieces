@@ -16,7 +16,8 @@ set autoread
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM diff 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set diffopt=iwhite
+set diffopt=iwhite,filler,context:5
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -136,7 +137,10 @@ set viminfo^=%
 set laststatus=2
 
 " Format the status line
-set statusline=\ %{HasPaste()}%f%m%r%h\ %w\ \ Line:\ %l
+set statusline=\ %{HasPaste()}%f%m%r%h\ %w\ \ Line:%l
+set statusline+=\ Col:%c
+set statusline=%<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
+
 
 
 

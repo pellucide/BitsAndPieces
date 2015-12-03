@@ -134,3 +134,10 @@ fi
 alias cd=cd_func
 export PS1="\\u@\h \\W]\\$ "
 export PATH=~/bin:$PATH
+
+
+export ANDROD_SDK="/Users/Jagat.Brahma/android-sdk-macosx/"
+export PATH="$ANDROID_SDK:$PATH"
+export PATH="$ANDROID_SDK/build-tools/23.0.2:$PATH"
+export PATH="$ANDROID_SDK/platform-tools:$PATH"
+export PATH="$ANDROID_SDK/tools:$PATH"

@@ -37,11 +37,11 @@
 # set -o ignoreeof
 #
 # Use case-insensitive filename globbing
- shopt -s nocaseglob
-#
+shopt -s nocaseglob
+
 # Make bash append rather than overwrite the history on disk
- shopt -s histappend
-#
+shopt -s histappend
+
 # When changing directory small typos can be ignored by bash
 # for example, cd /vr/lgo/apaache would find /var/log/apache
 shopt -s cdspell
@@ -123,21 +123,40 @@ alias vi='vim -X'
 # Paranoid: neither group nor others have any perms:
 # umask 077
 
+
+#find the current dir
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+  DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+done
+DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+
+
+
 # Functions
 # Some people use a different file for functions
 if [ -f "${HOME}/.bash_functions" ]; then
    source "${HOME}/.bash_functions"
 fi
 
+# Functions
+# Source the bash_fuctions from the current dir
+if [ -f "${DIR}/.bash_functions" ]; then
+   source "${DIR}/.bash_functions"
+fi
+
 
 
 alias cd=cd_func
 export PS1="\\u@\h \\W]\\$ "
-export PATH=~/bin:$PATH
+export PATH=~/bin:${PATH}
+export PATH=/opt/local/libexec/gnubin/:${PATH}
 
 
-export ANDROD_SDK="/Users/Jagat.Brahma/android-sdk-macosx/"
-export PATH="$ANDROID_SDK:$PATH"
-export PATH="$ANDROID_SDK/build-tools/23.0.2:$PATH"
-export PATH="$ANDROID_SDK/platform-tools:$PATH"
-export PATH="$ANDROID_SDK/tools:$PATH"
+export ANDROD_SDK="${HOME}/android-sdk-macosx/"
+export PATH="${ANDROID_SDK}:${PATH}"
+export PATH="${ANDROID_SDK}/build-tools/23.0.2:${PATH}"
+export PATH="${ANDROID_SDK}/platform-tools:${PATH}"
+export PATH="${ANDROID_SDK}/tools:${PATH}"

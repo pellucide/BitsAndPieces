@@ -147,10 +147,15 @@ if [ -f "${DIR}/.bash_functions" ]; then
    source "${DIR}/.bash_functions"
 fi
 
+# Functions
+# Source the bash_fuctions from the current dir
+if [ -f "${DIR}/.git-prompt.sh" ]; then
+   source "${DIR}/.git-prompt.sh"
+fi
 
 
 alias cd=cd_func
-export PS1="\\u@\h \\W]\\$ "
+export PS1="\\u@\h \\W$(__git_ps1)]\\$ "
 export PATH=~/bin:${PATH}
 export PATH=/opt/local/libexec/gnubin/:${PATH}
 

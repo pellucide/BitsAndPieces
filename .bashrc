@@ -155,12 +155,14 @@ fi
 
 
 alias cd=cd_func
-export PS1="\\u@\h \\W$(__git_ps1)]\\$ "
+export PS1='\u@\h \W$(__git_ps1 " (%s)")\$ '
+export PS1='\u@\h \W$(__git_ps1 " (%s)")\$ '
+
 export PATH=~/bin:${PATH}
 export PATH=/opt/local/libexec/gnubin/:${PATH}
 
 
-export ANDROD_SDK="${HOME}/android-sdk-macosx/"
+export ANDROID_SDK="${HOME}/android-sdk-macosx/"
 export PATH="${ANDROID_SDK}:${PATH}"
 export PATH="${ANDROID_SDK}/build-tools/23.0.2:${PATH}"
 export PATH="${ANDROID_SDK}/platform-tools:${PATH}"

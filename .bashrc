@@ -154,6 +154,8 @@ if [ -f "${DIR}/.git-prompt.sh" ]; then
 fi
 
 
+SSH_PATH=`type -p ssh`
+alias ssh="$SSH_PATH -o ServerAliveInterval=5 -o ServerAliveCountMax=1"
 alias cd=cd_func
 export PS1='\u@\h \W$(__git_ps1 " (%s)")\$ '
 export PS1='\u@\h \W$(__git_ps1 " (%s)")\$ '
@@ -167,3 +169,4 @@ export PATH="${ANDROID_SDK}:${PATH}"
 export PATH="${ANDROID_SDK}/build-tools/23.0.2:${PATH}"
 export PATH="${ANDROID_SDK}/platform-tools:${PATH}"
 export PATH="${ANDROID_SDK}/tools:${PATH}"
+

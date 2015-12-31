@@ -76,3 +76,26 @@ cd_func ()
 
   return 0
 }
+
+
+sendGcmMessage() {
+    local usage="Usage:   $FUNCNAME devicePushToken message"
+    [[ $GCM_API_KEY == "" ]] && echo "define an env var GCM_API_KEY with the API KEY " && return 2
+    if  [ "$#" -lt "2" ]; then
+        echo $usage
+        return 1
+    fi
+    local HEADER1="Authorization:key=$GCM_API_KEY"
+    local HEADER2="Content-Type:application/json"
+    local POSTDATA="\"{ \\\"data\\\": $2, \\\"to\\\": \\\"$1\\\" }\""
+    local URL="https://gcm-http.googleapis.com/gcm/send"
+    #echo $POSTDATA
+
+    local cmd="curl  --header $HEADER1 --header $HEADER2 -d $POSTDATA $URL"
+    echo $cmd
+
+    `$cmd`
+
+
+    return 0
+}

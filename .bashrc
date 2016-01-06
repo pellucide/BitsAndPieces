@@ -164,7 +164,9 @@ export PATH=~/bin:${PATH}
 export PATH=/opt/local/libexec/gnubin/:${PATH}
 
 
+export ANDROID_NDK="${HOME}/android-ndk-r10e/"
 export ANDROID_SDK="${HOME}/android-sdk-macosx/"
+export ANDROID_HOME="${ANDROID_SDK}"
 export PATH="${ANDROID_SDK}:${PATH}"
 export PATH="${ANDROID_SDK}/build-tools/23.0.2:${PATH}"
 export PATH="${ANDROID_SDK}/platform-tools:${PATH}"

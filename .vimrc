@@ -159,3 +159,5 @@ syntax on
 filetype plugin indent on
 let loaded_matchparen = 1
 map <C-o> <C-]>
+
+nmap =j :%!python -m json.tool<CR>

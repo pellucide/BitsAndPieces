@@ -152,3 +152,5 @@ function! HasPaste()
     return ''
 endfunction
 
+
+nmap =j :%!python -m json.tool<CR>

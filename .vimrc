@@ -141,6 +141,8 @@ set statusline=\ %{HasPaste()}%f%m%r%h\ %w\ \ Line:%l
 set statusline+=\ Col:%c
 set statusline=%<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
 
+set tags=tags,../tags,../../tags
+
 
 
 
@@ -152,3 +154,8 @@ function! HasPaste()
     return ''
 endfunction
 
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+let loaded_matchparen = 1
+map <C-o> <C-]>

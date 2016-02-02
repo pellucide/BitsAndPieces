@@ -30,6 +30,11 @@ cd_func ()
   local x2 the_new_dir adir index
   local -i cnt
 
+  if  [ "$#" -eq "2" ]; then
+      cd ${PWD/$1/$2}
+      return 0
+  fi
+
   if [[ $1 ==  "--" ]]; then
     dirs -v
     return 0

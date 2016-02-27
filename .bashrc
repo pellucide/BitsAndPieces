@@ -157,8 +157,8 @@ fi
 SSH_PATH=`type -p ssh`
 alias ssh="$SSH_PATH -o ServerAliveInterval=5 -o ServerAliveCountMax=1"
 alias cd=cd_func
-export PS1='\u@\h \W$(__git_ps1 " (%s)")\$ '
-export PS1='\u@\h \W$(__git_ps1 " (%s)")\$ '
+#export PS1='\u@\h \W$(__git_ps1 " (%s)")\$ '
+export PS1='\[\033[01;32m\]\u@\h \[\033[01;34m\]\W\[\033[00m\]$(__git_ps1 " (%s)")\$ '
 
 export PATH=~/bin:${PATH}
 export PATH=/opt/local/libexec/gnubin/:${PATH}

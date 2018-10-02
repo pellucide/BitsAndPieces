@@ -14,7 +14,14 @@
 
 # Modifying /etc/skel/.bashrc directly will prevent
 # setup from updating it.
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
 
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
 # The copy in your home directory (~/.bashrc) is yours, please
 # feel free to customise it to create a shell
 # environment to your liking.  If you feel a change
@@ -162,6 +169,8 @@ export PS1='\[\033[01;32m\]\u@\h \[\033[01;34m\]\W\[\033[00m\]$(__git_ps1 " (%s)
 
 export PATH=~/bin:${PATH}
 export PATH=/opt/local/libexec/gnubin/:${PATH}
+export PATH=/home/jpbrahma/.nimble/bin:$PATH
+
 
 
 export ANDROID_NDK="${HOME}/android-ndk-r10e/"

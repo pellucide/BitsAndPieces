@@ -162,12 +162,13 @@ map <C-o> <C-]>
 map =j :%!python -m json.tool<CR>
 
 
-"unmap annonying mouse scrolls
+"disable annonying mouse scrolls
+set mouse=a
 map <ScrollWheelUp> <nop>
-map <S-ScrollWheelUp> <nop>
-map <C-ScrollWheelUp> <nop>
 map <ScrollWheelDown> <nop>
+map <S-ScrollWheelUp> <nop>
 map <S-ScrollWheelDown> <nop>
+map <C-ScrollWheelUp> <nop>
 map <C-ScrollWheelDown> <nop>
 map <ScrollWheelLeft> <nop>
 map <S-ScrollWheelLeft> <nop>
@@ -175,3 +176,7 @@ map <C-ScrollWheelLeft> <nop>
 map <ScrollWheelRight> <nop>
 map <S-ScrollWheelRight> <nop>
 map <C-ScrollWheelRight> <nop>
+map <MiddleMouse> <nop>
+map <2-MiddleMouse> <Nop>
+map <3-MiddleMouse> <Nop>
+map <4-MiddleMouse> <Nop>

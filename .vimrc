@@ -159,4 +159,19 @@ filetype plugin indent on
 let loaded_matchparen = 1
 map <C-o> <C-]>
 
-nmap =j :%!python -m json.tool<CR>
+map =j :%!python -m json.tool<CR>
+
+
+"unmap annonying mouse scrolls
+map <ScrollWheelUp> <nop>
+map <S-ScrollWheelUp> <nop>
+map <C-ScrollWheelUp> <nop>
+map <ScrollWheelDown> <nop>
+map <S-ScrollWheelDown> <nop>
+map <C-ScrollWheelDown> <nop>
+map <ScrollWheelLeft> <nop>
+map <S-ScrollWheelLeft> <nop>
+map <C-ScrollWheelLeft> <nop>
+map <ScrollWheelRight> <nop>
+map <S-ScrollWheelRight> <nop>
+map <C-ScrollWheelRight> <nop>
